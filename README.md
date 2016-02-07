@@ -19,7 +19,7 @@ Some Centrifuge may work it' way into Holliday but a fresh start was chosen for 
 ## Features
 
 - [x] PHP 7 :sparkles: :+1:
-- [x] PSR-7 compliant middleware using [zend-expressive](https://github.com/zendframework/zend-expressive)
+- [x] PSR-7 compliant middleware using [zend-expressive](http://zend-expressive.readthedocs.org/)
 - [x] [Domain Driven Design](https://github.com/codeliner/php-ddd-cargo-sample): CRUD is so :poop:
 - [x] CQRS & Event Sourcing: No more destructive :boom: updates, event sourced means every state transition in the system is logged. Amazing.
 - [x] Hell I might even add Unit Tests
