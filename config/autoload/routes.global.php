@@ -4,13 +4,14 @@ return [
     'dependencies' => [
         'invokables' => [
             Zend\Expressive\Router\RouterInterface::class => Zend\Expressive\Router\FastRouteRouter::class,
-            ClickDiscover\Action\PingAction::class => ClickDiscover\Action\PingAction::class,
         ],
         'factories' => [
-            ClickDiscover\Action\HomePageAction::class => ClickDiscover\Action\HomePageFactory::class,
-            ClickDiscover\Action\GetConfigAction::class => ClickDiscover\Action\GetConfigFactory::class,
             ClickDiscover\Action\GetAllOffersAction::class => ClickDiscover\Action\GetAllOffersFactory::class,
+            ClickDiscover\Action\GetConfigAction::class => ClickDiscover\Action\GetConfigFactory::class,
         ],
+        'abstract_factories' => [
+            \ClickDiscover\Action\AbstractActionFactory::class
+        ]
     ],
 
     'routes' => [

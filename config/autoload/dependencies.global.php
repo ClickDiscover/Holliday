@@ -19,10 +19,12 @@ return [
         'factories' => [
             Application::class => ApplicationFactory::class,
             Helper\UrlHelper::class => Helper\UrlHelperFactory::class,
+            \PDO::class =>  ClickDiscover\Container\PDOFactory::class,
+            ClickDiscover\Model\OfferRepositoryInterface::class => ClickDiscover\Container\OfferRepositoryPDOFactory::class
         ],
     ],
 
-    'pdo' => [
+    'pdoConfig' => [
         'url' => 'pgsql:host=localhost;dbname=clickdiscover;port=5432;user=patrick'
     ]
 ];

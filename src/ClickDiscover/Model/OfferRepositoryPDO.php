@@ -2,7 +2,7 @@
 
 namespace ClickDiscover\Model;
 
-class OfferRepositoryPDO {
+class OfferRepositoryPDO implements OfferRepositoryInterface {
 
     public function __construct ($pdo) {
         $this->db = $pdo;
