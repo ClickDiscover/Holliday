@@ -21,4 +21,8 @@ return [
             Helper\UrlHelper::class => Helper\UrlHelperFactory::class,
         ],
     ],
+
+    'pdo' => [
+        'url' => 'pgsql:host=localhost;dbname=clickdiscover;port=5432;user=patrick'
+    ]
 ];

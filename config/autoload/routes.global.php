@@ -9,6 +9,7 @@ return [
         'factories' => [
             ClickDiscover\Action\HomePageAction::class => ClickDiscover\Action\HomePageFactory::class,
             ClickDiscover\Action\GetConfigAction::class => ClickDiscover\Action\GetConfigFactory::class,
+            ClickDiscover\Action\GetAllOffersAction::class => ClickDiscover\Action\GetAllOffersFactory::class,
         ],
     ],
 
@@ -29,6 +30,12 @@ return [
             'name' => 'api.config',
             'path' => '/api/config',
             'middleware' => ClickDiscover\Action\GetConfigAction::class,
+            'allowed_methods' => ['GET'],
+        ],
+        [
+            'name' => 'api.offers',
+            'path' => '/api/offers',
+            'middleware' => ClickDiscover\Action\GetAllOffersAction::class,
             'allowed_methods' => ['GET'],
         ],
     ],
