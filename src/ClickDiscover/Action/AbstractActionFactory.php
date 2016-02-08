@@ -7,16 +7,16 @@ use ReflectionClass;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 /*************************************************************************************/
-/* AbstractActionFactory.php                                                         */ 
+/* AbstractActionFactory.php                                                         */
 /*   Automatically inserts Actions into Zend-ServiceManager                          */
-/*                                                                                   */ 
-/*   https://xtreamwayz.com/blog/2015-12-30-psr7-abstract-action-factory-one-for-all */  
+/*                                                                                   */
+/*   https://xtreamwayz.com/blog/2015-12-30-psr7-abstract-action-factory-one-for-all */
 /*************************************************************************************/
 
 
 class AbstractActionFactory implements AbstractFactoryInterface {
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
-    {
+
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null) {
         // Construct a new ReflectionClass object for the requested action
         $reflection = new ReflectionClass($requestedName);
         // Get the constructor

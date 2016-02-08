@@ -10,7 +10,7 @@
 
 Originally born out of [Centrifuge](https://github.com/ClickDiscover/Centrifuge), but Holliday is a completely new project built from the ground up.
 
-Some Centrifuge may work it' way into Holliday but a fresh start was chosen for a few reasons:
+Some of Centrifuge's code may find it's way into Holliday but a fresh start was chosen for a few reasons:
 
 * The problem space is different - Centrifuge was geared for rendering static content (as in `wget http://stolen`) with 2 step offers.
 * Better Abstraction - Holliday is primarily to be an API for fetching creatives for our active offers, this will enable embedding into other tools (i.e. CMS, Taboola, etc.)
@@ -26,14 +26,14 @@ Some Centrifuge may work it' way into Holliday but a fresh start was chosen for 
 
 ## Basic API
 
-Verb | Endpoint | Implemented ? | Notes
----- | -------- | ------------- | -----
-GET  | `/api/offers` | ✓ | Returns all offers
-GET  | `/api/offers/:id` | 𐄂 | Return an offer by id
-GET  | `/api/articles` | 𐄂 | Return all articles
-GET  | `/api/articles/:id` | 𐄂 | Return article by id
-GET  | `/api/articles/:id/slots` | 𐄂 | Returns the ad slots for a particular article
-GET  | `/api/slot/:id` | 𐄂 | Returns a particular slot
-GET  | `/api/slot/:id/trafficking` | 𐄂 | Returns all trafficked offers for this slot
-GET  | `/api/slot/:id/creatives` | 𐄂 | Return creatives for the slot (Perhaps query arguments will enable the ordering)
+Verb | Endpoint                    | Implemented ? | Notes
+---- | --------                    | ------------- | -----
+GET  | `/api/offers`               | ✓             | Returns all offers
+GET  | `/api/offers/:id`           | 𐄂             | Return an offer by id
+GET  | `/api/articles`             | 𐄂             | Return all articles
+GET  | `/api/articles/:id`         | 𐄂             | Return article by id
+GET  | `/api/articles/:id/slots`   | 𐄂             | Returns the ad slots for a particular article
+GET  | `/api/slot/:id`             | 𐄂             | Returns a particular slot
+GET  | `/api/slot/:id/trafficking` | 𐄂             | Returns all trafficked offers for this slot
+GET  | `/api/slot/:id/creatives`   | 𐄂             | Return creatives for the slot (Perhaps query arguments will enable the ordering)
 
