@@ -2,6 +2,7 @@
 
 namespace ClickDiscover\Persistence;
 
+use ClickDiscover\Common\Identifier;
 use ClickDiscover\Model\Offer;
 use ClickDiscover\Model\OfferRepositoryInterface;
 
@@ -12,7 +13,7 @@ class OfferRepositoryPDO implements OfferRepositoryInterface {
         $this->db = $pdo;
     }
 
-    public function get(string $id) {
+    public function get(Identifier $id) {
         // return array_map([self::class, 'fromArray'], $this->db->query("SELECT * FROM offers WHERE uuid = '$id'")->fetch());
         $res = $this->db->query("SELECT * FROM offers WHERE uuid = '$id'", \PDO::FETCH_ASSOC)->fetch();
         $arr = OfferRepositoryPDO::fromArray($res);
