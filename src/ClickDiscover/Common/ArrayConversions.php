@@ -16,6 +16,8 @@ trait ArrayConversions {
         foreach ($vars as $key => $val) {
             if ($val instanceof Arrayable) {
                 $copy[$key] = $val->toArray();
+            } elseif ($val instanceof Identifier) {
+                $copy[$key] = $val->toString();
             } else {
                 $copy[$key] = $val;
             }

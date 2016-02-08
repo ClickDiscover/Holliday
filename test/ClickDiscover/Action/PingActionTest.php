@@ -1,8 +1,8 @@
 <?php
 
-namespace AppTest\Action;
+namespace ClickDiscover\Action;
 
-use App\Action\PingAction;
+use ClickDiscover\Action\PingAction;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 

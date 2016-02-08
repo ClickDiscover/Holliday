@@ -1,8 +1,8 @@
 <?php
 
-namespace AppTest\Action;
+namespace ClickDiscover\Action;
 
-use App\Action\HomePageAction;
+use ClickDiscover\Action\HomePageAction;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 use Zend\Expressive\Router\RouterInterface;

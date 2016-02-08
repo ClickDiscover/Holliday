@@ -1,15 +1,15 @@
 <?php
 
-namespace ClickDiscover\Model;
+namespace ClickDiscover\Common;
 
 use Ramsey\Uuid\{Uuid, UuidInterface};
 
 
-class Identifier implements Serializable {
+class Identifier implements \Serializable {
 
     private $uuid;
 
-    public function __construct ($uuid) {
+    public function __construct (UuidInterface $uuid) {
         $this->uuid = $uuid;
     }
 
