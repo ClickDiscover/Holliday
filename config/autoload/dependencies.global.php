@@ -26,5 +26,18 @@ return [
 
     'pdoConfig' => [
         'url' => 'pgsql:host=localhost;dbname=clickdiscover;port=5432;user=patrick'
+    ],
+
+    'illuminate' => [
+        'db' => [
+            'driver' => 'pgsql',
+            'host' => 'localhost',
+            'database' => 'clickdiscover',
+            'user' => 'patrick',
+            'password' => '',
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ]
     ]
 ];
