@@ -1,6 +1,10 @@
 <?php
 
-namespace ClickDiscover\Model;
+namespace ClickDiscover\Persistence;
+
+use ClickDiscover\Model\Offer;
+use ClickDiscover\Model\OfferRepositoryInterface;
+
 
 class OfferRepositoryMemory implements OfferRepositoryInterface {
     public function get(string $id) {

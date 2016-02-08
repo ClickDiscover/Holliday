@@ -1,9 +1,10 @@
 <?php
 
-namespace ClickDiscover\Container;
+namespace ClickDiscover\Container\Persistence;
 
 use Interop\Container\ContainerInterface;
-use ClickDiscover\Model\OfferRepositoryMemory;
+use ClickDiscover\Persistence\OfferRepositoryMemory;
+
 
 class OfferRepositoryMemoryFactory {
     public function __invoke (ContainerInterface $container) {

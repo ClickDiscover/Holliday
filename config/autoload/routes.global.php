@@ -6,11 +6,11 @@ return [
             Zend\Expressive\Router\RouterInterface::class => Zend\Expressive\Router\FastRouteRouter::class,
         ],
         'factories' => [
-            ClickDiscover\Action\GetAllOffersAction::class => ClickDiscover\Action\GetAllOffersFactory::class,
-            ClickDiscover\Action\GetConfigAction::class => ClickDiscover\Action\GetConfigFactory::class,
+            // ClickDiscover\Action\GetAllOffersAction::class => ClickDiscover\Container\Action\GetAllOffersFactory::class,
+            ClickDiscover\Action\GetConfigAction::class => ClickDiscover\Container\Action\GetConfigFactory::class,
         ],
         'abstract_factories' => [
-            \ClickDiscover\Action\AbstractActionFactory::class
+            \ClickDiscover\Container\Action\AbstractActionFactory::class
         ]
     ],
 

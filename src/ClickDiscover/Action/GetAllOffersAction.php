@@ -6,12 +6,14 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\JsonResponse;
 
+use ClickDiscover\Model\OfferRepositoryInterface;
+
 
 class GetAllOffersAction {
 
     private $offerRepository;
 
-    public function __construct($offerRepository) {
+    public function __construct(OfferRepositoryInterface $offerRepository) {
         $this->offerRepository = $offerRepository;
     }
 

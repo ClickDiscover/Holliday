@@ -1,6 +1,6 @@
 <?php
 
-namespace ClickDiscover\Action;
+namespace ClickDiscover\Container\Action;
 
 use Interop\Container\ContainerInterface;
 use ReflectionClass;
@@ -31,7 +31,6 @@ class AbstractActionFactory implements AbstractFactoryInterface {
         $dependencies = [];
         foreach ($parameters as $parameter) {
             // Get the parameter class
-            var_dump($parameter);
             $class = $parameter->getClass();
             // Get the class from the container
             $dependencies[] = $container->get($class->getName());

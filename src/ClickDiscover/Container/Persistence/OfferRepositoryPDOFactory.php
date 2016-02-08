@@ -1,9 +1,10 @@
 <?php
 
-namespace ClickDiscover\Container;
+namespace ClickDiscover\Container\Persistence;
 
 use Interop\Container\ContainerInterface;
-use ClickDiscover\Model\OfferRepositoryPDO;
+use ClickDiscover\Persistence\OfferRepositoryPDO;
+
 
 class OfferRepositoryPDOFactory {
     public function __invoke (ContainerInterface $container) {
