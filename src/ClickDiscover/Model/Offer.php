@@ -8,42 +8,30 @@ use ClickDiscover\Common\Identifier;
 
 class Offer extends AbstractAggregateRoot {
 
-    const INCENTIVE_CPA = 'cpa';
-    const INCENTIVE_CPC = 'cpc';
+    const CPA = 'cpa';
+    const CPC = 'cpc';
 
     // protected $id;
-    protected $payoutType;
     protected $product;
     protected $network;
+    protected $url;
+    protected $payout;
+    protected $status;
 
-    public function __construct (Identifier $id, string $payoutType, $product, $network) {
+    public function __construct (
+        Identifier $id,
+        Product $product,
+        $network,
+        string $url,
+        float $payout,
+        string $status
+    )  {
+
         $this->id = $id;
-        $this->payoutType = $payoutType;
         $this->product = $product;
         $this->network = $network;
+        $this->url = $url;
+        $this->payout = $payout;
+        $this->status = $status;
     }
-
-    // public function id(): Identifier {
-        // return $this->id;
-    // }
-
-    // public function payoutType(): string {
-        // return $this->payoutType;
-    // }
-
-    // public function product(): string {
-        // return $this->product;
-    // }
-    // public function network(): string {
-        // return $this->network;
-    // }
-
-    // public function toArray(): array {
-        // return [
-            // 'id' => $this->id,
-            // 'payoutType' => $this->payoutType,
-            // 'product' => $this->product,
-            // 'network' => $this->network
-        // ];
-    // }
 }

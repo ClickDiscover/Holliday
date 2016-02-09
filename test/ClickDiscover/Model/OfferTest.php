@@ -11,7 +11,7 @@ class OfferTest extends \PHPUnit_Framework_TestCase {
 
     public function testInterface () {
         $uuid = Identifier::generate();
-        $p = new Offer ($uuid, Offer::INCENTIVE_CPA, 1, 1);
+        $p = new Offer ($uuid, Offer::CPA, 1, 1);
         
         $this->assertTrue ($p instanceof Offer);
         $this->assertTrue ($p instanceof AbstractAggregateRoot);
@@ -21,18 +21,18 @@ class OfferTest extends \PHPUnit_Framework_TestCase {
 
     public function testGetters () {
         $uuid = Identifier::generate();
-        $p = new Offer ($uuid, Offer::INCENTIVE_CPA, 1, 1);
+        $p = new Offer ($uuid, Offer::CPA, 1, 1);
         
         $this->assertTrue ($p->getId() === $uuid);
-        $this->assertEquals ($p->payoutType, Offer::INCENTIVE_CPA);
+        $this->assertEquals ($p->payoutType, Offer::CPA);
     }
 
     public function testToArray () {
         $uuid = Identifier::generate();
-        $p = new Offer ($uuid, Offer::INCENTIVE_CPA, 1, 1);
+        $p = new Offer ($uuid, Offer::CPA, 1, 1);
         $arr = [
             'id' => $p->getId()->toString(),
-            'payoutType' => Offer::INCENTIVE_CPA,
+            'payoutType' => Offer::CPA,
             'product' => 1,
             'network' => 1
         ];

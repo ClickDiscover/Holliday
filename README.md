@@ -33,6 +33,7 @@ GET  | `/api/offers/:id`           | 𐄂             | Return an offer by id
 GET  | `/api/articles`             | 𐄂             | Return all articles
 GET  | `/api/articles/:id`         | 𐄂             | Return article by id
 GET  | `/api/articles/:id/slots`   | 𐄂             | Returns the ad slots for a particular article
+GET  | `/api/articles/:id/offers`  | 𐄂             | Fetch a ranked (random) list of offers for an article
 GET  | `/api/slot/:id`             | 𐄂             | Returns a particular slot
 GET  | `/api/slot/:id/trafficking` | 𐄂             | Returns all trafficked offers for this slot
 GET  | `/api/slot/:id/creatives`   | 𐄂             | Return creatives for the slot (Perhaps query arguments will enable the ordering)

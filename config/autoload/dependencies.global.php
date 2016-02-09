@@ -20,7 +20,8 @@ return [
             Application::class => ApplicationFactory::class,
             Helper\UrlHelper::class => Helper\UrlHelperFactory::class,
             \PDO::class =>  ClickDiscover\Container\PDOFactory::class,
-            ClickDiscover\Model\OfferRepositoryInterface::class => ClickDiscover\Container\Persistence\OfferRepositoryMemoryFactory::class
+            ClickDiscover\Model\OfferRepositoryInterface::class => ClickDiscover\Container\Persistence\OfferRepositoryMemoryFactory::class,
+            ClickDiscover\Repository\SlotRepositoryInterface::class => ClickDiscover\Container\Persistence\SlotRepositoryMemoryFactory::class
         ],
     ],
 

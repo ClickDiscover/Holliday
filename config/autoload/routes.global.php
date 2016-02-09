@@ -39,5 +39,11 @@ return [
             'middleware' => ClickDiscover\Action\GetAllOffersAction::class,
             'allowed_methods' => ['GET'],
         ],
+        [
+            'name' => 'api.slots',
+            'path' => '/api/slots',
+            'middleware' => ClickDiscover\Action\GetSlotsAction::class,
+            'allowed_methods' => ['GET'],
+        ],
     ],
 ];
