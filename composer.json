@@ -5,14 +5,12 @@
     "license": "proprietary",
     "require": {
         "php": ">=7.0",
-        "roave/security-advisories": "dev-master",
-        "zendframework/zend-expressive": "~1.0.0@rc || ^1.0",
-        "zendframework/zend-expressive-helpers": "^2.0",
-        "zendframework/zend-stdlib": "~2.7",
-        "zendframework/zend-expressive-fastroute": "^1.0",
-        "zendframework/zend-servicemanager": "^2.7.3 || ^3.0",
-        "ocramius/proxy-manager": "^1.0",
-        "zendframework/zend-expressive-twigrenderer": "^1.0",
+        "slim/slim": ">=3.0",
+        "league/plates": "^3.1",
+        "monolog/monolog": "^1.15",
+        "f3ath/lazypdo": "^0.0.1",
+        "oscarotero/psr7-middlewares": "^3.12",
+        "slim/twig-view": "^2.0",
         "robloach/component-installer" : "^0.2.3",
         "components/jquery" : "^2.2",
         "components/pure": "dev-master",
@@ -33,7 +31,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "AppTest\\": "test/AppTest/"
+            "AppTest\\": "test/ClickDiscover/"
         }
     },
     "scripts": {
