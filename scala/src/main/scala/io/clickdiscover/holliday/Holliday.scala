@@ -65,7 +65,7 @@ trait Holliday extends Runnable {
 }
 
 
-trait SlickApp extends Runnable {
+trait DoobieApp extends Runnable {
   def run(): Unit = {
 
   }
