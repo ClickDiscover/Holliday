@@ -28,11 +28,11 @@ object Database {
       .transact(tx)
 
 
-    def findProduct(id: UUID): Option[Product] =
-      sql"SELECT uuid as id, name, image_href as image FROM products where uuid = $id"
-        .query[Product]
-        .option
-        .transact(tx)
+    // def findProduct(id: UUID): Option[Product] =
+      // sql"SELECT uuid as id, name, image_href as image FROM products where uuid = $id"
+        // .query[Product]
+        // .option
+        // .transact(tx)
 
   // implicit val localDateMeta: Meta[LocalDate] =
     // Meta[SqlDate].xmap(
