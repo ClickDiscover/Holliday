@@ -61,9 +61,65 @@ object InMemoryProductService extends ProductService {
   )
 
   val map = ids.zip(names).map { case (id: UUID, name: String) =>
-    id -> Product(ProductId(id), name, "")
+    id -> Product(id, name, "")
   }.toMap
 
   def find(id: UUID) = map.get(id)
   def all = map.values.toList
 }
+
+
+object DatabaseProductService extends  ProductService {
+  import slick.driver.PostgresDriver.api._
+
+  val db = Database.forConfig("database")
+
+  def find (id: UUID): Option[Product] = None
+
+  def all = {
+    val f = db.run(ProductTable.query.result)
+    println(f)
+    f.value.get.get
+  }
+}
+
+
+// object DatabaseProductService {
+  // import io.getquill._
+  // import io.getquill.naming.SnakeCase
+  // import io.getquill.sources.sql.idiom.PostgresDialect
+
+  // implicit val decodeCustomValue = mappedEncoding[UUID, String](_.toString)
+  // implicit val encodeCustomValue = mappedEncoding[String, UUID](UUID.fromString(_))
+
+  // val db = source(new JdbcSourceConfig[PostgresDialect, SnakeCase]("db"))
+  // val mirror = source(new SqlMirrorSourceConfig("db"))
+
+  // val productQuote = quote {
+    // query[Product]("products",
+      // _.image -> "image_href")
+  // }
+// }
+
+// import doobie.imports._
+// import doobie.contrib.postgresql.pgtypes.UuidType
+
+// object DatabaseProductService extends  ProductService {
+
+  // val tx = Database.tx
+
+  // def find (id: UUID) =
+    // sql"SELECT uuid as id, name, image_href as image FROM products WHERE uuid = $id"
+      // .query[Product]
+      // .option
+      // .transact(tx)
+      // .run
+
+  // def all =
+    // sql"SELECT uuid as id, name, image_href as image FROM products"
+      // .query[Product]
+      // .list
+      // .transact(tx)
+      // .run
+
+// }

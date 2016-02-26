@@ -1,31 +1,31 @@
-package io.clickdiscover.holliday
+// package io.clickdiscover.holliday
 
-import doobie.imports._
-import scalaz._
-import Scalaz._
-import scalaz.concurrent.Task
-import scalaz.stream._
+// import doobie.imports._
+// import scalaz._
+// import Scalaz._
+// import scalaz.concurrent.Task
+// import scalaz.stream._
 // import java.sql.{Date => SqlDate}
 // import org.joda.time.LocalDate
 // import org.joda.time.DateTimeZone
 // import Json._
 
 
-import java.util.UUID
-import doobie.contrib.postgresql.pgtypes.UuidType
+// import java.util.UUID
+// import doobie.contrib.postgresql.pgtypes.UuidType
 
 
 
 object Database {
 
-  val tx = DriverManagerTransactor[Task]("org.postgresql.Driver", "jdbc:postgresql:clickdiscover", "patrick", "")
+  // val tx = DriverManagerTransactor[Task]("org.postgresql.Driver", "jdbc:postgresql:clickdiscover", "patrick", "")
 
 
-  def findAllProducts =
-    sql"SELECT uuid as id, name, image_href as image FROM products"
-      .query[Product]
-      .list
-      .transact(tx)
+  // def findAllProducts =
+    // sql"SELECT uuid as id, name, image_href as image FROM products"
+      // .query[Product]
+      // .list
+      // .transact(tx)
 
 
     // def findProduct(id: UUID): Option[Product] =

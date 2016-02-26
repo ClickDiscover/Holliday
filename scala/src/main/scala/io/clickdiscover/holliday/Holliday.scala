@@ -5,6 +5,7 @@ import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
+import java.util.UUID
 
 
 
@@ -53,9 +54,20 @@ trait Holliday extends Runnable {
         }
       }
 
-    val foo = 'afbs
-    val bindingFuture = Http().bindAndHandle(route ~ colors, "localhost", 8080)
+    val products = path("product") {
+      parameters('id.as[String]) { id =>
+        val uuid = java.util.UUID.fromString(id)
 
+        val res = InMemoryProductService.find(uuid) match {
+          case Some(product) => s"Found: ${product.toString}"
+          case None => s"Nothing found for $id"
+        }
+        complete (res)
+      }
+    }
+
+
+    val bindingFuture = Http().bindAndHandle(route ~ products, "localhost", 8080)
     println(s"Server online at http://localhost:8080/\nPress RETURN to stop...")
     Console.readLine() // for the future transformations
     bindingFuture
@@ -68,6 +80,8 @@ trait Holliday extends Runnable {
 trait DoobieApp extends Runnable {
   def run(): Unit = {
 
+    val products = InMemoryProductService.all
+    products foreach println
   }
 }
 
@@ -76,4 +90,4 @@ trait Runner { self: Runnable =>
   def main(args: Array[String]): Unit = run()
 }
 
-object Main extends Runner with Holliday
+object Main extends Runner with Holliday 
